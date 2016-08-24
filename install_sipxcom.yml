@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+
+    - name: Copy sipxcom.repo in /etc/yum.repos.d
+      copy: src=sipxcom.repo dest=/etc/yum.repos.d/sipxcom.repo
+    - name: Install sipxcom
+      yum: name=sipxcom state=present
